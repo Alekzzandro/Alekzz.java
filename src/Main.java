@@ -9,15 +9,15 @@ public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = Managers.getDefaultTaskManager();
 
-        Task task1 = new Task("Task 1", "Description 1", Status.NEW);
-        Task task2 = new Task("Task 2", "Description 2", Status.NEW);
+        Task task1 = new Task(1, "Task 1", "Description 1", Status.NEW);
+        Task task2 = new Task(2, "Task 2", "Description 2", Status.NEW);
         taskManager.createTask(task1);
         taskManager.createTask(task2);
 
-        Epic epic1 = new Epic("Epic 1", "Description Epic 1");
+        Epic epic1 = new Epic(3, "Epic 1", "Description Epic 1"); // Добавлен id
         taskManager.createEpic(epic1);
 
-        SubTask subTask1 = new SubTask("SubTask 1", "Description SubTask 1", epic1.getId(), Status.NEW);
+        SubTask subTask1 = new SubTask(4, "SubTask 1", "Description SubTask 1", epic1.getId(), Status.NEW);
         taskManager.createSubTask(subTask1);
 
         printAllTasks(taskManager);

@@ -1,11 +1,11 @@
 package test;
+
 import model.Status;
 import model.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.InMemoryTaskManager;
 import service.TaskManager;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class InMemoryTaskManagerTest {
@@ -18,7 +18,7 @@ class InMemoryTaskManagerTest {
 
     @Test
     void testAddNewTask() {
-        Task task = new Task("Test Task", "Description", Status.NEW);
+        Task task = new Task(0, "Test Task", "Description", Status.NEW);
         taskManager.createTask(task);
 
         Task savedTask = taskManager.getTaskById(task.getId());
@@ -29,7 +29,7 @@ class InMemoryTaskManagerTest {
 
     @Test
     void testTaskHistory() {
-        Task task = new Task("Test Task", "Description", Status.NEW);
+        Task task = new Task(0, "Test Task", "Description", Status.NEW);
         taskManager.createTask(task);
         taskManager.getTaskById(task.getId());
 

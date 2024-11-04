@@ -1,4 +1,5 @@
 package test;
+
 import model.Status;
 import model.Task;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +18,7 @@ class TaskTest {
 
     @Test
     void testAddToHistory() {
-        Task task = new Task("Test Task", "Description", Status.NEW);
+        Task task = new Task(1, "Test Task", "Description", Status.NEW);
         historyManager.add(task);
 
         assertEquals(1, historyManager.getHistory().size(), "История должна содержать одну задачу.");
