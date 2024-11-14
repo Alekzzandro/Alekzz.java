@@ -12,7 +12,7 @@ public class Main {
         Task task1 = new Task(1, "Task 1", "Description 1", Status.NEW);
         Task task2 = new Task(2, "Task 2", "Description 2", Status.NEW);
         taskManager.createTask(task1);
-        taskManager.createTask(task2);
+        taskManager.createTask(task2); //
 
         Epic epic1 = new Epic(3, "Epic 1", "Description Epic 1"); // Добавлен id
         taskManager.createEpic(epic1);
